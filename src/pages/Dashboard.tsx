@@ -10,7 +10,7 @@ import {
   Zap, TrendingUp, ArrowRight 
 } from 'lucide-react';
 
-const API_BASE = 'http://127.0.0.1:5000';
+const API_BASE = 'https://backend-qyal.onrender.com/';
 
 const COLORS = ['#8b5cf6', '#10b981', '#f59e0b', '#ef4444', '#3b82f6'];
 
