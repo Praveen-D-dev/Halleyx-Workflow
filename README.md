@@ -1,73 +1,168 @@
-# React + TypeScript + Vite
+# 🚀 Halleyx Challenge 1 – Workflow Engine System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Overview
 
-Currently, two official plugins are available:
+This project is a full-stack **Workflow Engine System** built as part of **Halleyx Challenge 1**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application allows users to design and execute workflows consisting of multiple steps, conditions, and actions. It simulates real-world business processes such as approvals, task flows, and status tracking.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🌐 Live Application
 
-## Expanding the ESLint configuration
+* Frontend: https://workflow-virid-eta.vercel.app/
+* Backend: https://backend-qyal.onrender.com/
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🎯 Core Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🔄 Workflow Builder
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* Create workflows with multiple steps
+* Define execution flow dynamically
+* Supports conditional logic between steps
+
+### ⚙️ Workflow Execution
+
+* Execute workflows based on defined rules
+* Tracks progress across different stages
+* Maintains current state of execution
+
+### 📜 Audit & State Tracking
+
+* Logs each step execution
+* Tracks transitions between states
+* Provides visibility into workflow history
+
+### ✅ Task & Approval Flow
+
+* Simulates approval-based workflows
+* Step-by-step progression system
+* Supports decision-based branching
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React (Vite)
+* Modern component-based architecture
+* Clean and responsive UI
+
+### Backend
+
+* Node.js
+* Express.js
+* Prisma ORM
+* SQLite database
+
+### Deployment
+
+* Vercel (Frontend)
+* Render (Backend)
+
+---
+
+## ⚙️ System Architecture
+
+* Frontend communicates with backend via REST APIs
+* Backend handles:
+
+  * Workflow logic
+  * State transitions
+  * Database operations using Prisma
+* SQLite used for lightweight and efficient storage
+
+---
+
+## 🔗 API Endpoints (Sample)
+
+### Workflow
+
+* `POST /workflows` → Create a workflow
+* `GET /workflows` → Fetch all workflows
+* `GET /workflows/:id` → Get workflow details
+
+### Execution
+
+* `POST /execute` → Start workflow execution
+* `POST /execute/:id/next` → Move to next step
+* `GET /execute/:id` → Get execution status
+
+---
+
+## 🚀 Running Locally
+
+### 1. Clone the project
+
+```bash id="wz2kqf"
+git clone <your-repo-link>
+cd project-root
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 2. Frontend Setup (React + Vite)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash id="v7z2dh"
+cd frontend
+npm install
+npm run dev
 ```
+
+* Runs on: http://localhost:5173/
+
+---
+
+### 3. Backend Setup (Node + Prisma)
+
+```bash id="1x9q7s"
+cd backend
+npm install
+
+# Run database migrations
+npx prisma migrate dev
+
+# Start server
+npm run dev
+```
+
+* Runs on: http://localhost:3000/
+
+---
+
+## 🧪 Development Commands
+
+### Frontend
+
+```bash id="r6b5vh"
+npm run dev
+npm run build
+```
+
+### Backend
+
+```bash id="d2kx8p"
+npm run dev
+npx prisma studio
+```
+
+---
+
+## 💡 Key Highlights
+
+* Designed a dynamic workflow engine (not static logic)
+* Implemented conditional step execution
+* Built state tracking and audit logging
+* Integrated Prisma ORM for structured database handling
+* Deployed full-stack application
+
+---
+
+
+Praveen D
+
+Praveen D
+Computer Science & Engineering
